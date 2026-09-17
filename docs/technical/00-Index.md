@@ -5,7 +5,7 @@
 ### Core Architecture (01-04)
 | # | Dokumen | Deskripsi | Status |
 |---|---------|-----------|--------|
-| 00 | [[00-Index]] | Master index (file ini) | Done |
+| 00 | Index | Master index (file ini) | Done |
 | 01 | [[01-System-Architecture]] | Tech stack, arsitektur, scaling, security, testing, logging, rate limiting, error handling | Done |
 | 02 | [[02-Database-Schema]] | 27 tabel SQL, ERD, RLS, index, trigger, audit logs, soft delete, seeding, migration | Done |
 | 03 | [[03-User-Segmentation]] | 3 segmen, persona, role/permission, onboarding, accessibility, retention strategy | Done |
@@ -48,7 +48,6 @@
 ## Ringkasan Teknis
 
 ```
-Dokumen: 21 file
 Tech Stack MVP:
   Frontend: React + Vite + TypeScript + TailwindCSS (PWA)
   Backend:  Supabase (PostgreSQL + Auth + Storage + Realtime + Edge Functions)
@@ -84,5 +83,5 @@ Ops: On-call rotation + incident playbook + SOP templates
 - **Data-Driven:** PostHog analytics, A/B testing, funnel analysis dari hari 1
 
 ## Referensi
-- [[../projects/DIGIVERSE-Festival]] — Ringkasan proyek & BMC
-- Kritik_Teknis_DIGIVERSE.md (Downloads) — Review kritik & saran teknis
+- [[../kritik/00-Kritik-Lengkap]] — Kritik & saran (termasuk koreksi perhitungan)
+- [[../../DIGIVERSE-Festival]] — Ringkasan proyek & BMC
