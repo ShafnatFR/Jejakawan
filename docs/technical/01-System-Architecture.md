@@ -11,7 +11,7 @@ Jejakawan adalah platform mobile-first yang menghubungkan wisatawan dengan desti
 ### Frontend (Mobile)
 ```
 PWA (Phase 1 — MVP)
-├── Framework     : React + Vite (PWA)
+├── Framework     : Next.js 14 (App Router, SSR/ISR-ready)
 ├── UI Library    : TailwindCSS + shadcn/ui
 ├── Maps          : Google Maps JavaScript API / Mapbox GL JS
 ├── State         : Zustand (lightweight)

@@ -49,11 +49,11 @@
 
 ```
 Tech Stack MVP:
-  Frontend: React + Vite + TypeScript + TailwindCSS (PWA)
-  Backend:  Supabase (PostgreSQL + Auth + Storage + Realtime + Edge Functions)
+  Frontend: Next.js 14 (App Router) + TypeScript + TailwindCSS
+  Backend:  Supabase (PostgreSQL + Auth + Storage + Realtime)
   Maps:     Google Maps JS API (free tier $200/bln)
-  Payment:  Midtrans (2.5% per tx)
-  Hosting:  Vercel (PWA) + Supabase (backend)
+  Payment:  Mayar (produksi); Midtrans direncanakan
+  Hosting:  Vercel (frontend + API Routes) + Supabase (backend)
   Cost:     ~Rp15rb/bulan (free tiers)
 
 Database: 27 tabel, PostGIS geolocation, RLS, audit logs, soft delete
@@ -76,7 +76,7 @@ Ops: On-call rotation + incident playbook + SOP templates
 ## Prinsip Desain
 - **MVP First:** fitur inti dulu (rekomendasi, matching, gamifikasi, safety), sisanya fase 2+
 - **Cost Efficient:** Supabase free tier + Vercel + managed service > custom infrastruktur
-- **Mobile-First:** PWA dulu (React + Vite), native app kalau sudah validated
+- **Mobile-First:** Next.js web app dulu, native app kalau sudah validated
 - **Rule-Based > AI:** recommendation engine pakai filtering biasa, bukan ML
 - **Security by Design:** verifikasi & moderasi dari awal, OWASP Top 10 review
 - **4-Layer Safety:** preventive → monitoring → response → education

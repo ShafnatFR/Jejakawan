@@ -14,11 +14,11 @@ Platform travel PWA yang menghubungkan wisatawan dengan destinasi underrated, te
 
 | Layer | Tool |
 |---|---|
-| Frontend | React + Vite + TypeScript + TailwindCSS (PWA) |
-| Backend | Supabase (PostgreSQL + Auth + Storage + Realtime + Edge Functions) |
+| Frontend | Next.js 14 (App Router) + TypeScript + TailwindCSS |
+| Backend | Supabase (PostgreSQL + Auth + Storage + Realtime) |
 | Maps | Google Maps Platform |
-| Payment | Midtrans |
-| Hosting | Vercel (frontend) + Supabase (backend) |
+| Payment | Mayar (produksi); Midtrans direncanakan |
+| Hosting | Vercel (frontend + API Routes) + Supabase (backend) |
 | Analytics | PostHog |
 | Monitoring | Sentry + UptimeRobot |
 
@@ -56,37 +56,37 @@ Juga tersedia: [Kritik & Saran Teknis](docs/Kritik_Teknis_DIGIVERSE.md) — revi
 
 ```
 Jejakawan/
-├── apps/
-│   └── web/              # PWA (React + Vite)
 ├── docs/
 │   ├── technical/        # 21 dokumen teknis
+│   ├── kritik/           # Review & kritik teknis
 │   └── Kritik_Teknis_DIGIVERSE.md
-├── supabase/
-│   ├── migrations/       # SQL migrations
-│   └── functions/        # Edge Functions (Deno)
-├── .github/
-│   └── workflows/        # CI/CD
 ├── .env.example          # Template environment variables
 ├── .gitignore
 └── README.md
 ```
 
+> **Implementasi kode** ada di repo terpisah: **[ShafnatFR/JejakawanApp](https://github.com/ShafnatFR/JejakawanApp)** (Next.js 14, App Router, API Routes, RLS-enforced).
+> **Live:** https://jejakawanapp.vercel.app
+
 ## Quick Start
 
 ```bash
-# 1. Clone
-git clone https://github.com/ShafnatFR/Jejakawan.git
-cd Jejakawan
+# 1. Clone repo implementasi
+git clone https://github.com/ShafnatFR/JejakawanApp.git
+cd JejakawanApp
 
-# 2. Install dependencies (nanti saat codebase ada)
-# cd apps/web && npm install
+# 2. Install dependencies
+npm install
 
 # 3. Setup environment
 cp .env.example .env.local
-# Isi Supabase URL, API key, dll
+# Isi Supabase URL/key, Mayar API key, dll
 
 # 4. Run development
-# npm run dev
+npm run dev
+
+# 5. Build production
+npm run build
 ```
 
 ## Kompetisi

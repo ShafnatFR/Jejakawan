@@ -28,9 +28,9 @@ import posthog from 'posthog-js';
 
 export function initPostHog() {
   posthog.init(
-    import.meta.env.VITE_POSTHOG_KEY ?? 'phc_xxx',
+    process.env.NEXT_PUBLIC_POSTHOG_KEY ?? 'phc_xxx',
     {
-      api_host: import.meta.env.VITE_POSTHOG_HOST ?? 'https://analytics.jejakawan.id',
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://analytics.jejakawan.id',
       capture_pageview: true,
       capture_pageleave: true,
       persistence: 'localStorage+cookie',
@@ -573,7 +573,7 @@ import posthog from 'posthog-js';
 
 export function registerSuperProperties() {
   posthog.register({
-    app_version: import.meta.env.VITE_APP_VERSION ?? '1.0.0',
+    app_version: process.env.NEXT_PUBLIC_APP_VERSION ?? '1.0.0',
     is_pwa: window.matchMedia('(display-mode: standalone)').matches,
     install_status: window.matchMedia('(display-mode: standalone)').matches
       ? 'installed'

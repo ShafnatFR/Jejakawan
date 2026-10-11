@@ -312,7 +312,7 @@ Total gaji: ~Rp20-25jt/bulan (dari Rp42,5jt).
 ## B2. Tech Stack Realistis untuk Pilot
 
 ```
-Mobile    : PWA (React + Vite) — satu codebase, cepat ke market
+Mobile    : Next.js (web) — satu codebase, cepat ke market
 Backend   : Supabase (PostgreSQL + Auth + Storage + Realtime)
 Maps      : Google Maps Platform API (free tier $200/bulan)
 Payment   : Midtrans / Xendit

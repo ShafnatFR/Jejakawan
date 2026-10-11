@@ -5,7 +5,7 @@
 ```
 Development (local)
 ├── Supabase local (supabase start — Docker)
-├── Frontend: Vite dev server (localhost:5173)
+├── Frontend: Next.js dev server (localhost:3000)
 ├── Env: .env.local
 └── Database: seeded dengan dummy data
 
@@ -31,7 +31,7 @@ Production
 ```
 jejakawan/
 ├── apps/
-│   ├── web/                    # PWA (React + Vite)
+│   ├── src/                    # Next.js 14 (App Router)
 │   │   ├── src/
 │   │   │   ├── components/     # Reusable UI components
 │   │   │   ├── pages/          # Route pages
@@ -98,8 +98,7 @@ jobs:
       - run: npm ci
       - run: npm run lint          # ESLint
       - run: npm run type-check    # TypeScript strict check
-      - run: npm run test          # Vitest
-      - run: npm run build         # Vite build check
+      - run: npm run build         # Next.js production build (type-checked)
 ```
 
 ### Continuous Deployment (merge to main)
@@ -356,7 +355,7 @@ Code Review:
 ```
 LAYER           | TOOL                  | COST
 ────────────────┼───────────────────────┼──────────────
-Frontend        | React + Vite + TS     | Rp0
+Frontend        | Next.js + TS        | Rp0
 Styling         | TailwindCSS           | Rp0
 State           | Zustand               | Rp0
 Backend/BaaS    | Supabase (Free→Pro)   | Rp0 → $25/bln
@@ -442,14 +441,17 @@ Dependency Scanning:
 
 ```
 .env.example (template, committed to git):
-├── VITE_SUPABASE_URL=https://xxx.supabase.co
-├── VITE_SUPABASE_ANON_KEY=eyJhbG...
-├── VITE_GOOGLE_MAPS_API_KEY=AIza...
-├── VITE_POSTHOG_KEY=phc_...
-├── VITE_SENTRY_DSN=https://...@sentry.io/...
-├── VITE_MIDTRANS_CLIENT_KEY=SB-Mid-...
-├── VITE_APP_URL=https://app.jejakawan.id
-└── VITE_APP_ENV=production|staging|development
+├── NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
+├── NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbG...
+├── SUPABASE_SERVICE_ROLE_KEY=eyJhbG... (server-only)
+├── MAYAR_API_KEY=mwr_... (server-only)
+├── MAYAR_WEBHOOK_SECRET=mwr_... (server-only)
+├── MAYAR_MERCHANT_PHONE=628...
+├── MAYAR_IS_SANDBOX=false
+└── NEXTAUTH_URL=https://jejakawanapp.vercel.app
+
+Konvensi Next.js: NEXT_PUBLIC_* untuk variabel client-side,
+tanpa prefix untuk server-only (API Routes / server components).
 
 Secret management:
 ├── Local: .env.local (git-ignored)
